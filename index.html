@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Astro Softwares</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#08090d;--panel:#101219;--panel2:#151821;--border:rgba(255,255,255,.08);
+  --text:#f5f7fb;--muted:#8e95a5;--accent:#7c5cff;--accent2:#9b84ff;
+}
+body{
+  font-family:'Montserrat',sans-serif;background:
+  radial-gradient(circle at 20% 0%,rgba(124,92,255,.16),transparent 30%),
+  radial-gradient(circle at 90% 20%,rgba(54,190,255,.09),transparent 25%),var(--bg);
+  color:var(--text);min-height:100vh;
+}
+a{text-decoration:none;color:inherit}
+.container{width:min(1150px,92%);margin:auto}
+header{padding:28px 0 80px}
+nav{display:flex;justify-content:space-between;align-items:center}
+.logo{font-size:20px;font-weight:800;letter-spacing:-.5px}
+.logo span{color:var(--accent)}
+.navlinks{display:flex;gap:24px;color:var(--muted);font-size:13px;font-weight:600}
+.navlinks a:hover{color:white}
+.hero{text-align:center;padding:72px 0 55px}
+.badge{
+ display:inline-flex;align-items:center;gap:8px;padding:8px 13px;border:1px solid var(--border);
+ background:rgba(255,255,255,.035);border-radius:999px;color:#b7bdca;font-size:11px;font-weight:600;
+}
+.dot{width:7px;height:7px;background:#54e38e;border-radius:50%;box-shadow:0 0 12px #54e38e}
+h1{font-size:clamp(42px,7vw,76px);line-height:1.02;letter-spacing:-3px;margin:22px 0 18px;font-weight:800}
+.gradient{background:linear-gradient(90deg,#fff,#a894ff);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{max-width:620px;margin:auto;color:var(--muted);line-height:1.7;font-size:15px}
+.actions{margin-top:28px;display:flex;justify-content:center;gap:12px}
+.btn{padding:13px 20px;border-radius:11px;font-size:13px;font-weight:700;border:1px solid var(--border);transition:.2s}
+.primary{background:var(--accent);border-color:var(--accent);box-shadow:0 10px 30px rgba(124,92,255,.2)}
+.btn:hover{transform:translateY(-2px);filter:brightness(1.08)}
+.toolbar{display:flex;gap:12px;margin-bottom:24px;flex-wrap:wrap}
+.search{
+ flex:1;min-width:230px;background:var(--panel);border:1px solid var(--border);border-radius:12px;
+ padding:14px 16px;color:white;font-family:inherit;outline:none
+}
+.search:focus{border-color:rgba(124,92,255,.6)}
+.filters{display:flex;gap:8px}
+.filter{background:var(--panel);border:1px solid var(--border);color:var(--muted);border-radius:10px;padding:11px 14px;font-family:inherit;font-size:12px;font-weight:600;cursor:pointer}
+.filter.active,.filter:hover{background:rgba(124,92,255,.15);color:white;border-color:rgba(124,92,255,.35)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;padding-bottom:80px}
+.card{
+ position:relative;background:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.018));
+ border:1px solid var(--border);border-radius:17px;padding:22px;min-height:235px;
+ overflow:hidden;transition:.25s;display:flex;flex-direction:column;
+}
+.card:before{content:"";position:absolute;width:130px;height:130px;background:var(--accent);filter:blur(70px);opacity:.08;right:-40px;top:-40px}
+.card:hover{transform:translateY(-5px);border-color:rgba(124,92,255,.4);box-shadow:0 18px 45px rgba(0,0,0,.25)}
+.icon{
+ width:48px;height:48px;border-radius:13px;background:var(--panel2);border:1px solid var(--border);
+ display:grid;place-items:center;font-size:21px;margin-bottom:20px
+}
+.card h2{font-size:17px;margin-bottom:8px;letter-spacing:-.4px}
+.card p{font-size:12px;color:var(--muted);line-height:1.6}
+.tag{display:inline-block;margin-top:14px;font-size:9px;text-transform:uppercase;letter-spacing:1px;color:#a99bff;font-weight:700}
+.visit{margin-top:auto;padding-top:20px;font-size:12px;font-weight:700;color:#c5bcff}
+.visit span{transition:.2s}.card:hover .visit span{margin-left:5px}
+.empty{display:none;text-align:center;color:var(--muted);padding:50px}
+footer{border-top:1px solid var(--border);padding:25px 0;color:#656c7a;font-size:11px;text-align:center}
+@media(max-width:800px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.navlinks{display:none}.grid{grid-template-columns:1fr}h1{letter-spacing:-2px}.hero{padding-top:45px}.filters{width:100%}.filter{flex:1}}
+</style>
+</head>
+<body>
+<header>
+<div class="container">
+<nav>
+<div class="logo">Astro<span>.</span>Softwares</div>
+<div class="navlinks"><a href="#sites">Websites</a><a href="#about">About</a></div>
+</nav>
+</div>
+</header>
+
+<main>
+<section class="hero container" id="about">
+<div class="badge"><span class="dot"></span> Our Projects</div>
+<h1>Websites <br><span class="gradient">built & created.</span></h1>
+<p>A collection of projects, experiments, and websites — all in one place.</p>
+<div class="actions"><a class="btn primary" href="#sites">Explore Projects ↓</a></div>
+</section>
+
+<section class="container" id="sites">
+<div class="toolbar">
+<input class="search" id="search" placeholder="Search websites..." autocomplete="off">
+<div class="filters">
+<button class="filter active" data-filter="all">All</button>
+<button class="filter" data-filter="ai">AI</button>
+<button class="filter" data-filter="games">Games</button>
+<button class="filter" data-filter="tools">Tools</button>
+</div>
+</div>
+
+<div class="grid" id="grid"></div>
+<div class="empty" id="empty">No websites found.</div>
+</section>
+</main>
+
+<footer>Astro Softwares Copyright 2026™</footer>
+
+<script>
+
+const websites = [
+  {
+    name:"LightMaker",
+    description:"A creative web project for experimenting with light and visual effects.",
+    url:"https://astro-softwares.github.io/Lightmaker/",
+    category:"tools",
+    icon:"✦"
+  },
+
+  {
+    name:"Elemental Physics",
+    description:"Play with images, chemicals, elements, and more!",
+    url:"https://astro-softwares.github.io/Elemental-Sandbox-LAB-/",
+    category:"tools",
+    icon:"＋"
+  }
+];
+
+const grid=document.getElementById("grid");
+const search=document.getElementById("search");
+const empty=document.getElementById("empty");
+let currentFilter="all";
+
+function render(){
+ const q=search.value.toLowerCase().trim();
+ const items=websites.filter(site=>{
+   const matchesFilter=currentFilter==="all"||site.category===currentFilter;
+   const matchesSearch=(site.name+" "+site.description+" "+site.category).toLowerCase().includes(q);
+   return matchesFilter&&matchesSearch;
+ });
+ grid.innerHTML=items.map(site=>`
+   <a class="card" href="${site.url}" target="${site.url==="#"?"_self":"_blank"}" rel="noopener">
+     <div class="icon">${site.icon}</div>
+     <h2>${site.name}</h2>
+     <p>${site.description}</p>
+     <span class="tag">${site.category}</span>
+     <div class="visit">Visit website <span>→</span></div>
+   </a>
+ `).join("");
+ empty.style.display=items.length?"none":"block";
+}
+document.querySelectorAll(".filter").forEach(btn=>{
+ btn.addEventListener("click",()=>{
+   document.querySelectorAll(".filter").forEach(b=>b.classList.remove("active"));
+   btn.classList.add("active");
+   currentFilter=btn.dataset.filter;
+   render();
+ });
+});
+search.addEventListener("input",render);
+render();
+</script>
+</body>
+</html>
